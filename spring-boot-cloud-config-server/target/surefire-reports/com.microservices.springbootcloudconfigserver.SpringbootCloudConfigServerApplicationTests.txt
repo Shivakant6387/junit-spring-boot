@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.microservices.springbootcloudconfigserver.SpringbootCloudConfigServerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.088 s <<< FAILURE! - in com.microservices.springbootcloudconfigserver.SpringbootCloudConfigServerApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is org.eclipse.jgit.api.errors.JGitInternalException: Exception caught during execution of fetch command
+Caused by: org.eclipse.jgit.api.errors.JGitInternalException: Exception caught during execution of fetch command
+Caused by: org.eclipse.jgit.errors.NotSupportedException: URI not supported: https:///git@github.com:Shivakant6387/spring-boot-properties.git
+
