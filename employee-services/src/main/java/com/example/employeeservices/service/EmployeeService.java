@@ -19,16 +19,17 @@ public class EmployeeService {
     private ModelMapper modelMapper;
     //@Autowired
     RestTemplate restTemplate;
-    public EmployeeService(RestTemplateBuilder builder){
-       this.restTemplate= builder.build();
+    public EmployeeService(  @Value("${addressservice.base.url}")String addressBaseUrl,RestTemplateBuilder builder){
+       // System.out.println("url"+addressBaseUrl);
+       this.restTemplate= builder.rootUri(addressBaseUrl).build();
     }
-    @Value("${addressservice.base.url}")
-    private String addressBaseUrl;
+//    @Value("${addressservice.base.url}")
+//    private String addressBaseUrl;
     public EmployeeResponse getEmployeeById(int id){
       //AddressResponse addressResponse=new AddressResponse();
         Employee employee= employeeRepository.findById(id).get();
         EmployeeResponse employeeResponse = modelMapper.map(employee, EmployeeResponse.class);
-       AddressResponse addressResponse = restTemplate.getForObject(addressBaseUrl+"/address/{id}",AddressResponse.class,id);
+       AddressResponse addressResponse = restTemplate.getForObject("/address/{id}",AddressResponse.class,id);
         employeeResponse.setAddressResponse(addressResponse);
         return employeeResponse;
     }
