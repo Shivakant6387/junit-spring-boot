@@ -7,6 +7,7 @@ import com.example.employeeservices.response.EmployeeResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,8 +17,11 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
     @Autowired
     private ModelMapper modelMapper;
-    @Autowired
+    //@Autowired
     RestTemplate restTemplate;
+    public EmployeeService(RestTemplateBuilder builder){
+       this.restTemplate= builder.build();
+    }
     @Value("${addressservice.base.url}")
     private String addressBaseUrl;
     public EmployeeResponse getEmployeeById(int id){
