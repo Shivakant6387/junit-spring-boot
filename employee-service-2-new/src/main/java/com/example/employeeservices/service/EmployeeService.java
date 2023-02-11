@@ -7,6 +7,7 @@ import com.example.employeeservices.response.AddressResponse;
 import com.example.employeeservices.response.EmployeeResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -23,8 +24,10 @@ public class EmployeeService {
         Employee employee= employeeRepository.findById(id).get();
         EmployeeResponse employeeResponse = modelMapper.map(employee, EmployeeResponse.class);
        //AddressResponse addressResponse = restTemplate.getForObject("/address/{id}",AddressResponse.class,id);
-        AddressResponse addressResponse=addressClient.getAddressByEmployeeId(id);
+       // AddressResponse addressResponse=addressClient.getAddressByEmployeeId(id);
                 //webClient.get().uri("/address/"+id).retrieve().bodyToMono(AddressResponse.class).block();
+        ResponseEntity<AddressResponse> addressResponseEntity=addressClient.getAddressByEmployeeId(id);
+        AddressResponse addressResponse=addressResponseEntity.getBody();
         employeeResponse.setAddressResponse(addressResponse);
         return employeeResponse;
     }
