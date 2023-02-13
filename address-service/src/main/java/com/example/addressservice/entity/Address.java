@@ -3,7 +3,7 @@ package com.example.addressservice.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import com.example.addressservice.response.AddressResponse;
 import javax.persistence.*;
 
 @Data
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "address")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY  )
     private int id;
     private String lane1;
     private String lane2;

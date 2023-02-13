@@ -9,4 +9,6 @@ public class AddressResponse {
     private String lane2;
     private long zip;
     private String state;
+
+
 }

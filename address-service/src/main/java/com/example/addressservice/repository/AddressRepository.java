@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address,Integer> {
-    @Query(nativeQuery = true ,value = "select ea.id,ea.lane1,ea.lane2,ea.state,ea.zip from mydb.address ea join employee e on e.id=ea.employee_id where ea.employee_id=:employeeId")
+    @Query(nativeQuery = true ,value = "select ea.id,ea.lane1,ea.lane2,ea.state,ea.zip from mydb.address ea join mydb.employee e on e.id=ea.employee_id where ea.employee_id=:employeeId")
     Address findAddressByEmployeeId(@Param("employeeId")int  employeeId);
 }

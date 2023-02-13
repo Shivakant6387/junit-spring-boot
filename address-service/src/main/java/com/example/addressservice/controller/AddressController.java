@@ -1,5 +1,4 @@
 package com.example.addressservice.controller;
-
 import com.example.addressservice.response.AddressResponse;
 import com.example.addressservice.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
