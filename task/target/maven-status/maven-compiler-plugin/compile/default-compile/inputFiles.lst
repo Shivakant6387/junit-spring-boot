@@ -1,0 +1,6 @@
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/model/User.java
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/MicroservicesTaskApplication.java
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/repository/UserRepository.java
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/config/UserConfig.java
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/controller/UserController.java
+/home/giitian/Desktop/Java_Shiva_Home_Project/task/src/main/java/com/example/microservicestask/service/UserService.java
