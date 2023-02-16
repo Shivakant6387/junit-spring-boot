@@ -2,6 +2,8 @@ package com.example.microservicestask.service;
 
 import com.example.microservicestask.model.User;
 import com.example.microservicestask.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +12,11 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
     @Autowired
     UserRepository userRepository;
     public List<User> getAllUser(User userModel){
+
         return userRepository.findAll();
     }
     public User createUser(User userModel){
@@ -33,5 +37,4 @@ public class UserService {
         user.setLastName(userModel.getLastName());
         return userRepository.save(user);
         }
-
 }
