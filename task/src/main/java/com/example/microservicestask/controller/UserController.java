@@ -19,7 +19,7 @@ public class UserController {
     //get
         @GetMapping("/users")
     public List<User> getAllUser(User userModel){
-            return userService.getAllUser(userModel);
+            return userService.getAllUser();
         }
     @GetMapping("/user/{id}")
     public Optional<User>findById(@PathVariable Integer id){
